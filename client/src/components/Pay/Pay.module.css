@@ -1,0 +1,101 @@
+.wrapperShipmentDetails {
+    flex: 1;
+    margin-right: 24px;
+}
+
+.nameShop {
+    font-size: 28px;
+    margin: 0;
+}
+.titleShipmentDetails {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.wrapperUser {
+    display: flex;
+    align-items: center;
+}
+.imgUser {
+    width: 70px;
+    height: 70px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+.logOut {
+    color: #0056b3;
+    display: block;
+    margin-top: 4px;
+}
+.logOut:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.wrapperOrderInformation {
+    flex: 1;
+    background-color: #f3f3f3;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.wrapperItemOrderInformation {
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.wrapperImg {
+    height: 80px;
+    width: 80px;
+    position: relative;
+}
+
+.imgOrderInformation {
+    height: 100%;
+    width: 100%;
+}
+
+.notice {
+    position: absolute;
+    display: none;
+    top: -9px;
+    right: -7px;
+    height: 15px;
+    width: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(217, 18, 31);
+    color: white;
+    font-size: 10px;
+}
+
+.noticeActive {
+    display: flex;
+}
+
+.nameProductItem {
+    flex: 1;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.price {
+    width: 70px;
+    font-size: 14px;
+}
+
+.wrapperDesOrder {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid white;
+}
+
+.button {
+    padding: 12px 32px !important;
+}

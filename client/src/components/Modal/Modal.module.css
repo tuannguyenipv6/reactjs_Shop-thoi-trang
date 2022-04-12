@@ -1,0 +1,244 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  z-index: 998;
+}
+
+.ouverlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  animation: hiden ease 0.5s;
+}
+
+.modal {
+  z-index: 1000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  background-color: #fefefe;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+
+  position: relative;
+}
+
+.show {
+  display: flex;
+}
+.show .ouverlay {
+  animation: show ease 0.7s;
+}
+.show .modal {
+  animation: show1 ease 0.7s;
+}
+
+.hiden {
+  animation: hiden ease 0.7s;
+}
+
+.close {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.close svg {
+  font-size: 22px;
+}
+
+.modalTitle {
+  margin: 0;
+  min-width: 300px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #888;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show1 {
+  from {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hiden {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+/* ModalRegisterQuestion */
+.registerQuestion h3 {
+  margin: 8px 0;
+}
+
+.registerQuestion p {
+  margin: 0;
+}
+
+.registerQuestionBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 12px 0 12px;
+}
+
+.registerQuestionBtn button {
+  border: 2px solid black;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+.registerQuestionBtn button:hover {
+  animation: bgrBtn ease 0.7s;
+  color: white;
+  background-color: black;
+}
+
+@keyframes bgrBtn {
+  0% {
+    background-color: #efefef;
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+/* Modal thông tin sản phẩm */
+.wrapperDetailProduct {
+  display: flex;
+  margin-top: 8px;
+  width: 740px;
+  max-height: 490px;
+  overflow: hidden;
+}
+
+.wrapperImg {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgMain {
+  width: 100%;
+  max-height: 377px;
+}
+.wrapperImgChildren {
+  margin: 4px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.img {
+  width: 24%;
+  cursor: pointer;
+}
+
+.wrapperProduct {
+  width: 50%;
+  padding: 24px;
+}
+
+.description {
+  line-height: 23px;
+  height: 69px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.wrapperCart {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapperSize {
+  display: flex;
+  align-items: center;
+}
+
+.size {
+  border: 1px solid #888;
+  display: flex;
+  height: 35px;
+  width: 35px;
+  border-radius: 2px;
+  margin: 0 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sizeActive,
+.size:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.sizeHiden:hover,
+.sizeHiden {
+  border: none;
+  background-color: rgb(172, 168, 168, 0.5);
+  color: #888;
+  cursor: default;
+  user-select: none;
+}
+
+.quantity {
+  margin: 0 12px;
+  user-select: none;
+}
+
+.wrapperBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  user-select: none;
+}
+
+.btn {
+  padding: 12px 52px;
+}
+
+@media only screen and (max-width: 46.1875em) {
+  .btn {
+    padding: 4px 8px;
+    margin: 8px 0 0 0;
+    min-width: 183px;
+    display: flex;
+    justify-content: center;
+  }
+  .wrapperCart {
+    flex-direction: column;
+  }
+}

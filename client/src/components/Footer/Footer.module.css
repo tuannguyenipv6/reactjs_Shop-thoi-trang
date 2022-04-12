@@ -1,0 +1,100 @@
+.footer {
+  border-top: 4px solid black;
+}
+
+/* Conten */
+.footerConten {
+  display: flex;
+  margin: 0 50px;
+}
+
+/* Contact */
+.contact {
+  flex: 1;
+}
+
+.contact img {
+  width: 100px;
+  margin: 8px 0 0 12px;
+}
+
+.contactList {
+  list-style: none;
+}
+
+.contactList ul {
+  padding: 0;
+}
+
+.contactList ul p {
+  display: flex;
+  align-items: center;
+}
+
+.contactList ul p svg {
+  color: #737373;
+  margin-right: 8px;
+}
+
+.contactList ul p a {
+  margin-left: 4px;
+  color: #ce3f3f;
+}
+
+.contactList ul p a:hover {
+  text-decoration: underline;
+  color: #0068d8;
+}
+
+.iconSocial svg {
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.iconSocial svg:hover {
+  opacity: 0.6;
+}
+
+/* info */
+.infoShop {
+  flex: 1;
+}
+
+.infoShop h3 {
+  font-weight: 400;
+}
+
+.infoShop a,
+.infoShop p {
+  margin: 8px 0;
+  display: block;
+}
+.infoShop a:hover {
+  cursor: pointer;
+  color: #ce3f3f;
+}
+
+/* Bottom */
+.footerBottom {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+  align-items: center;
+}
+.footerBottom span {
+  font-size: 12px;
+}
+
+/* response */
+@media only screen and (max-width: 63.9375em) {
+  .footerConten {
+    flex-direction: column;
+    margin: 0 12px;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

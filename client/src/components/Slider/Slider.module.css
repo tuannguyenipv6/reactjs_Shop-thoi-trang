@@ -1,0 +1,197 @@
+.wrapperSlider {
+  width: 1100px;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.sliders {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slider {
+  width: 20%;
+  display: flex;
+  transition: 0.6s;
+}
+
+.img {
+  width: 50%;
+  height: 100%;
+  border-radius: 4px;
+  background-size: cover;
+}
+
+.des {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  padding-left: 36px;
+}
+.logo {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+.desTitle {
+  font-family: "Pushster", cursive;
+  max-width: 280px;
+  margin-top: 56px;
+  font-size: 42px;
+  color: #38b6ff;
+}
+
+.desDes {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+.desConten {
+  display: block;
+  font-size: 28px;
+  font-family: "Pushster", cursive;
+  font-weight: bold;
+}
+
+.desBtn {
+  position: absolute;
+  bottom: 80px;
+  right: 45%;
+  background-color: #7f7f7f;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.desBtn:hover {
+  border: 2px solid #7f7f7f;
+  background-color: transparent;
+  color: red;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.naviBtn {
+  width: 50px;
+  height: 10px;
+  border: 2px solid rgb(56, 182, 255, 0.8);
+  background-color: transparent;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.naviBtn:hover,
+.btnActive {
+  background-color: #38b6ff;
+}
+
+/* Mobile lớn: width 667px => 740px */
+@media only screen and (max-width: 46.1875em) {
+  .wrapperSlider {
+    width: 450px;
+    height: 225px;
+  }
+  .des {
+    padding-left: 8px;
+  }
+  .logo {
+    top: 0px;
+    right: 0px;
+  }
+  .desTitle {
+    max-width: 120px;
+    margin: 22px 0;
+    font-size: 18px;
+  }
+  .desDes {
+    font-size: 14px;
+  }
+  .desConten {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .desBtn {
+    bottom: 24px;
+    right: 25%;
+    padding: 4px;
+    font-size: 8px;
+  }
+  .naviBtn {
+    width: 30px;
+    height: 4px;
+    margin: 2px;
+    border-radius: 1px;
+  }
+}
+
+/* moblile mh nhỏ */
+@media only screen and (max-width: 667px) {
+  .wrapperSlider {
+    width: 350px;
+    height: 175px;
+  }
+  .desTitle {
+    max-width: 110px;
+    font-size: 16px;
+    margin: 16px 0 8px 0;
+  }
+  .desBtn {
+    bottom: 12px;
+    right: 10%;
+  }
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 8px;
+  }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .wrapperSlider {
+    width: 718px;
+    height: 359px;
+  }
+  .logo {
+    top: 12px;
+    right: 12px;
+  }
+  .des {
+    padding-left: 18px;
+  }
+  .desTitle {
+    margin: 24px 0 18px 0;
+    font-size: 32px;
+  }
+  .desDes {
+    font-size: 24px;
+  }
+  .desConten {
+    margin-top: 8px;
+    font-size: 24px;
+  }
+  .desBtn {
+    bottom: 40px;
+    right: 15%;
+    padding: 8px;
+    font-size: 12px;
+  }
+}

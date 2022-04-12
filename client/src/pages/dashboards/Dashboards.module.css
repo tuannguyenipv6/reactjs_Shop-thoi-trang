@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+}
+
+.wrapperContent {
+    margin-left: 280px;
+    margin-top: 68px;
+    flex: 1;
+}
+
+.content {
+    padding: 12px 40px;
+}
+
+@media only screen and (max-width: 63.9375em) {
+    .wrapperContent {
+        margin-left: 0;
+        margin-top: 68px;
+    }
+}

@@ -1,0 +1,389 @@
+### ĐĂNG NHẬP
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "tuannguyenipv6@gmail.com",
+    "password": "seconderlyipv6"
+}
+
+### ĐĂNG KÝ USER
+POST http://localhost:5000/api/auth/register 
+Content-Type: application/json
+
+{
+    "name": "Quốc Tuấn",
+    "email": "tuannguyen26@gmail.com",
+    "password": "tuannguyen26"
+}
+
+
+# user
+# "email": "bytuannguyen7@gmail.com",
+# "password": "bytuannguyen7"
+
+# ADMIN
+# "email": "tuannguyenipv6@gmail.com",
+# "password": "seconderlyipv6"
+
+# 
+# "email": "tuannguyen26@gmail.com",
+# "password": "tuannguyen26"
+ 
+### CHECK TOKEN
+GET http://localhost:5000/api/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0MDYwMzY4M30.D1gY-zflJjym2IYTa6uo70pvw47zhxLyhrlCE1-GChY
+
+### THAY ĐỔI AVATAR USER
+POST http://localhost:5000/api/auth/avatar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDY0OTQ3MjJ9.xkEKB59SSvEh5JSCQ42OJnLH2tWlPR0HKYoiZp0zb5I
+
+{
+    "img": "avatarBy7.jpg"
+}
+
+### TẠM BỎ
+POST http://localhost:5000/api/general
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTYzOTA2MDkzN30._ZIbIyUD0qwSZTWQ8xAlPU0wWop4P6VeHNcJAo9eQcE
+
+{
+    "key": "AUTO-INCREMENT-DEMO",
+    "description": "AUTO-INCREMENT-DEMO",
+    "superKey": "AUTO-INCREMENT-DEMO",
+    "autoIncrement": 0,
+}
+
+### TẠM BỎ
+PUT http://localhost:5000/api/general/INTRODUCE-3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2MzkwNjI4MzIsInVzZXJBZG1pbiI6dHJ1ZX0.LBRyB23pd9pfyhUjiDKO3-9RXjuW7Fi-54_oC0vyspQ
+
+{
+    "description": "Sản phẩm được NQT Shop mua trực tiếp từ công ty và các trang web uy tín của Nike, adidas, Puma v.v… nên các bạn có thể yên tâm về nguồn gốc sản phẩm."
+}
+
+### TẠM BỎ
+GET http://localhost:5000/api/general/LOGOSHOP
+Content-Type: application/json
+
+### TẠM BỎ
+GET http://localhost:5000/api/general/info
+Content-Type: application/json
+
+### THÔNG TIN LIÊN HỆ [ADD]
+POST http://localhost:5000/api/contact
+Content-Type: application/json
+
+{
+    "name": "Kiệt cute",
+    "phone": "098236715",
+    "email": "kiêtcute@gmail.com",
+    "description": "Có vẻ shop đã hết mẫu áo Cheriki, tôi muốn mua không biết có còn không!"
+}
+
+### THÔNG TIN LIÊN HỆ [GET]
+GET http://localhost:5000/api/contact
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTYzOTU3ODA5Mn0.Yjg7coiZbxPWg66Vye8ddwv3mNRVpum4mEFf_-c_jYI
+
+
+### TẠM BỎ lấy thông tin giới thiệu
+GET http://localhost:5000/api/general/introduce
+Content-Type: application/json
+
+### TẠM BỎ địa chỉ và sđt
+GET http://localhost:5000/api/general/address-phone
+Content-Type: application/json
+
+### TẠM BỎ lấy thông tin tin tức
+GET http://localhost:5000/api/general/news
+Content-Type: application/json
+
+
+### DEMO ARRAY OF OBJECT
+POST http://localhost:5000/api/demo
+Content-Type: application/json
+
+{
+    "title": 99
+}
+
+### GET DEMO ARRAY OF OBJECT
+GET http://localhost:5000/api/demo
+Content-Type: application/json
+
+
+### [DATABASE COMMON ]
+### ADD
+POST http://localhost:5000/api/database-common
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0MTEzMzA0Nn0.SnJwve-LQU5bUWsHrLoaGZ0fR3nfF3jqpWLu_tt_8Mk
+
+{
+    "key": "Support24h",
+    "values": [
+        {
+            "key": "Tổng đài Shop luôn lắng nghe và hỗ trợ khách hàng mọi lúc!",
+            "value": "Not-Found"
+        }
+    ],
+    "suportKey": "Liên hệ hỗ trợ 24h/ngày"
+}
+
+### GET InfoShop in DataCommon
+GET http://localhost:5000/api/database-common
+Content-Type: application/json
+
+### GET News in DataCommon
+GET http://localhost:5000/api/database-common/news
+Content-Type: application/json
+
+
+### GET InfoShop in KEY DataCommon
+GET http://localhost:5000/api/database-common/info-shop/NameLogo
+Content-Type: application/json
+
+### GET Introduce in DataCommon
+GET http://localhost:5000/api/database-common/introduce
+Content-Type: application/json
+
+### GET data by key in DataCommon
+GET http://localhost:5000/api/database-common/policy/PaymentPolicy
+Content-Type: application/json
+
+### GET News by id
+GET http://localhost:5000/api/database-common/news/2
+Content-Type: application/json
+
+### PRODUCT
+### ADD New Product
+POST http://localhost:5000/api/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0MTk3NTg2MX0.3v8whSnuTir_7oPn9uQL7ZoS92QWYFVmuUp6MPQsWHg
+
+{
+    "name": "Áo khoác Bomber Nam Nữ 1980 phong cách SID59519",
+    "description": {
+        "description": "Áo khoác Bomber Nam Nữ 1980 phong cách: Chất liệu kaki bền, mát, không nhăn, hút ẩm tốt đem lại cảm giác thoải mái và thông thoáng cho người mặc. thiết kế tay dài, không cổ cho các cặp đôi tự tin thể hiện phong cách"
+    },
+    "trademark": "không",
+    "productType": "CLOTHES",
+    "originalPrice": 150000,
+    "price": 239000,
+    "discount": 31,
+    "sizes": [
+        {
+            "size": "m",
+            "status": 10
+        },
+        {
+            "size": "l",
+            "status": 0
+        }
+    ],
+    "nameImgs": [
+        "ao_khoac_bomber1.jpg",
+        "ao_khoac_bomber2.jpg",
+        "ao_khoac_bomber3.jpg"
+    ]
+}
+ 
+### Get data home
+### sản phẩm phổ biến
+GET http://localhost:5000/api/product/popular
+Content-Type: application/json
+
+### sản phẩm (sản phẩm mới xếp đầu)
+GET http://localhost:5000/api/product
+Content-Type: application/json
+
+### sản phẩm hot
+GET http://localhost:5000/api/product/hot-product
+Content-Type: application/json
+
+### sản gợi ý (có thể bạn sẽ thích)
+GET http://localhost:5000/api/product/suggested
+Content-Type: application/json
+
+### lấy sản phẩm theo id
+GET http://localhost:5000/api/product/by_id/7
+Content-Type: application/json
+
+### lấy sản phẩm theo TYPE
+GET http://localhost:5000/api/product/type-product/CLOTHES
+Content-Type: application/json
+
+### tìm kiếm sản phẩm
+POST http://localhost:5000/api/product/search
+Content-Type: application/json
+
+{
+    "valueSearch": "adidas"
+}
+
+### update heart in id user
+GET http://localhost:5000/api/product/up-heart/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDY2MzU1MjF9.XznXlWXX4Rotg2Aocbl55OvEBJEuLXTNQGG33M3o9Z0
+
+### get product user like
+GET http://localhost:5000/api/product/likes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDY2MzU1MjF9.XznXlWXX4Rotg2Aocbl55OvEBJEuLXTNQGG33M3o9Z0
+
+
+### thêm comment mới cho sản phẩm
+POST http://localhost:5000/api/comment/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0NjI3MzI1MH0.704-nU1F2i43145evWIQnXtV-G1zG45KVP00mMh63H0
+
+{
+    "name": "Điểu Thị Hiệp",
+    "avatar": "emy.jpg",
+    "date": "01-03-2022",
+    "content": "giao hàng quá chậm shop êi",
+    "star": 60
+}
+
+### lấy comment sản phẩm theo id sản phảm
+GET http://localhost:5000/api/comment/13
+Content-Type: application/json 
+
+### ADD CART
+POST http://localhost:5000/api/product/cart/add/10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg0NTM2Njl9.pcRqQbhbCg612tIoarooUJDzJDBDRfjAPmsQTTKZepM
+
+{
+    "size": "m"
+}
+
+### DELETE CART
+GET http://localhost:5000/api/product/cart/delete/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg0NjI0ODB9.fEyOQnUB4oCWza1TkpJ_fHhQPAB8X7eRHVN-Jto0Ws8
+
+### get cart product
+GET http://localhost:5000/api/product/cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg1NjU2MjN9.gEon5Sl74VCymOTfH95u96k9YyI2vRb4Mj7yPVC-XJw
+
+### Thông tin giao hàng
+### thêm mới thông tin giao hàng
+POST http://localhost:5000/api/shipment-details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg1NjU2MjN9.gEon5Sl74VCymOTfH95u96k9YyI2vRb4Mj7yPVC-XJw
+
+{
+    "address": "25 hạnh thông p3 quận gò vấp tp hcm", 
+    "fullName": "Nguyễn Quốc Tuấn",
+    "phoneNumber": "0385157796"
+}
+
+### lấy thông tin giao hàng
+GET http://localhost:5000/api/shipment-details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg1NjU2MjN9.gEon5Sl74VCymOTfH95u96k9YyI2vRb4Mj7yPVC-XJw
+
+### lấy phí vận chuyển
+GET http://localhost:5000/api/database-common/transport-fee
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWNkY2Q4ZWZjNThjZDM2YmZjNDk5YTYiLCJpYXQiOjE2NDg1NjU2MjN9.gEon5Sl74VCymOTfH95u96k9YyI2vRb4Mj7yPVC-XJw
+
+### fetchData Lấy phí vận chuyển tính toán giá viết bảng mới lưu đơn hàng
+### tạo modol cho bảng router xử lý thêm oder
+
+### BẢNG ODER (ĐƠN HÀNG)
+### thêm 1 đơn hàng mới
+POST http://localhost:5000/api/oder
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDkxNjYwMzV9.DncWqPuiQktKrwqhdP3k21t3rUNclCXOuMlp65Hk35c
+
+{
+    "name": "Tuấn Nguyễn",
+    "address": "381 Nguyễn Oanh, Gò Vấp, HCM",
+    "phoneNumber": "0381517796",
+    "transportFee": 30000,
+    "productOder": [
+        {
+            "idProduct": 13,
+            "img": "ao_khoac_bomber1.jpg",
+            "name": "ÁO KHOÁC BOMBER NAM NỮ 1980 PHONG CÁCH SID59519",
+            "size": "M",
+            "price": 164910,
+            "amount": 1
+        },{
+            "idProduct": 1,
+            "img": "sominam1.jpg",
+            "name": "ÁO SƠ MI TRẮNG NAM 5SMDT002TRK",
+            "size": "41",
+            "price": 550000,
+            "amount": 2
+        }
+    ]
+}
+ 
+### lấy các đơn hàng bởi tài khoản admin
+GET http://localhost:5000/api/oder/admin
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0OTA4NzA4Nn0.uFmByWupj4_D7FYs8KkON0ctnN7_UBKd_GaZMOuR6ek
+
+### lấy các đơn hàng bởi tài khoản user
+GET http://localhost:5000/api/oder/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDkyNDEzNTV9.1bPOS3cyKu8wHC1wgLl95C16scKAA1VKD71aAfzK3vA
+
+
+### gửi yêu cầu hủy đơn hàng
+GET http://localhost:5000/api/oder/cancel/10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDkyNDEzNTV9.1bPOS3cyKu8wHC1wgLl95C16scKAA1VKD71aAfzK3vA
+
+### xóa order by user
+GET http://localhost:5000/api/oder/delete-user/14
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWI0YWVjNGIzYTcxMDUyOGZkN2IiLCJpYXQiOjE2NDkyNDEzNTV9.1bPOS3cyKu8wHC1wgLl95C16scKAA1VKD71aAfzK3vA
+
+
+### Thay đổi trạng thái đơn hàng bởi Admin
+POST http://localhost:5000/api/oder/updated-admin/18
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0OTQ3MTU4OH0.D9hNVZF3c6VBbStd31wcuQk_5ZVrmRKvkCiS43AawCE
+
+{
+    "value": "READY"
+}
+
+### Xóa Order bởi Admin
+GET http://localhost:5000/api/oder/delete/15
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0OTQ3MTU4OH0.D9hNVZF3c6VBbStd31wcuQk_5ZVrmRKvkCiS43AawCE
+
+
+
+### thêm mới slider
+POST http://localhost:5000/api/slider
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlZWFkM2ZlY2Y3ZmU5NjY5ZDlhOWYiLCJ1c2VyQWRtaW4iOnRydWUsImlhdCI6MTY0OTMzNjQxMH0.20qTekRHtnz6Avo6ebpvxa87sdRoQMgXtbbkElYTZBo
+
+{
+    "title": "WELCOM TO BY SHOP NQT", 
+    "name": "Theo dõi blog của Shop NQT", 
+    "description": "Cơ sở 1: 1 Phạm Văn Đồng, Gò Vấp, TP. HCM", 
+    "img": "welcome-to-our-shop.jpg"
+}
+
+### lấy tất cả slider
+GET http://localhost:5000/api/slider
+Content-Type: application/json
+
+### lấy sản phẩm theo id
+GET http://localhost:5000/api/product/by_id/7
+Content-Type: application/json
+
+### GET News by id
+GET http://localhost:5000/api/database-common/news/2
+Content-Type: application/json

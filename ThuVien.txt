@@ -1,0 +1,564 @@
+client: 
+npx create-next-app .
+
+npm i react-icon
+npm i @types/react-icons
+
+npm i formik
+npm i yup
+
+npm i axios
+
+npm i react-select
+
+npm i react-toastify
+
+
+server: 
+npm i express jsonwebtoken mongoose dotenv argon2 cors
+npm i --save-dev @types/cors @types/express  
+npx tsconfig.json
+
+yarn add -D @types/node typescript
+yarn add -D ts-node
+npm i -D nodemon
+npm i -D @types/mongoose
+npm i -D @types/jsonwebtoken
+
+
+
+
+Sản phẩm:
+- tên sản phẩm 
+- mô tả sản phẩm: {
+    mô tả,
+    thông số: [
+        string,
+    ]
+}
+- thương hiệu
+- loại sản phẩm [quần áo, giày dép, phụ kiện, khác]
+- giá gốc
+- giá bán
+- giảm giá [%]
+- sizes: [
+    {
+        size: x, [chuổi]
+        status: 10, (-1 luôn còn hàng) [number] (số lượng hàng)
+    },{
+        size: XL, [chuổi]
+        status: -1, (-1 luôn còn hàng) [number] (số lượng hàng)
+    }
+]
+- ảnh: [
+    string, [chuổi]
+]
+- hotProducts: sản phẩm hot
+- lượt mua
+- lượt thích: [
+    idUser[], (mảng các id)
+]
+- đánh giá: [
+    {
+        idUser: string | any,
+        đánh giá: 3* (60%)
+    }
+]
+=> làm sao để lưu thông tin user?
+
+
+
+đánh giá sao?
+mặt array rỗng tức chưa có ai đánh giá
+-nếu 1 ng cho 1 sao thì sẽ là 20% 
+-nếu ng2 cho 5 sao thì sẽ là 100% 
+
+=> tất cả cộng lại tính trung bình = số sao
+
+
+- cái đầu chưa có ý tưởng ????
+- sản phẩm phổ biến lấy theo lượt mua nhiều nhất
+- sản phẩm mới lấy theo data thêm vào mới nhất
+- sản phẩm hót lấy theo key do chủ shop thêm vào
+- có thể bạn sẽ thích lấy theo sản phẩm có lượt thích cao nhất
+- sản phẩm được đánh giá cao (chưa có ý tưởng [lấy theo phần đánh giá])
+
+- Note: add product
+{
+    "name": "NIKE MERCURIAL SUPERFLY 8 ACADEMY TF – CV0953-107 - TRẮNG/BẠC SAFARI",
+    "description": {
+        "description": "NIKE MERCURIAL SUPERFLY 8 ACADEMY TF",
+        "parameter": [
+            "Phân khúc: Academy (tầm trung).",
+            "Upper: Synthetic - Da tổng hợp cao cấp.",
+            "Thiết kế đinh giày: Các đinh cao su hình chữ nhật, xếp chồng chéo với nhau. Theo đánh giá của nhiều người chơi thì những đinh TF hình chữ nhật lần này giúp đôi giày có thể trụ vững hơn trên sân.",
+            "Độ ôm chân: Cao",
+            "Bộ sưu tập: SAFARI PACK - Ra mắt tháng 4/2021",
+            "PTrên chân các cầu thủ nổi tiếng như: Cristiano Ronaldo, Kylian Mbappé, Erling Haaland, Jadon Sancho, Leroy Sané, Romelu Lukaku..."
+        ]
+    },
+    "trademark": "NIKE",
+    "productType": "FOOTWEAR",
+    "originalPrice": 500000,
+    "price": 650000,
+    "discount": 10,
+    "sizes": [
+        {
+            "size": "38",
+            "status": 20
+        },
+        {
+            "size": "39",
+            "status": 50
+        },
+        {
+            "size": "40",
+            "status": 10
+        },
+        {
+            "size": "41",
+            "status": 0
+        }
+    ],
+    "nameImgs": [
+        "giaynikecam.jpg",
+        "giaynikeden.jpg",
+        "giaynikexanh.jpg",
+        "giaynikexanh1.jpg"
+    ]
+}
+
+-note: somi nam
+{
+    "name": "ÁO SƠ MI TRẮNG NAM 5SMDT002TRK",
+    "description": {
+        "parameter": [
+            "Chất liệu: 92% Polyester, 8% Spandex",
+            "Kiểu dáng: Body fit ôm người, tôn dáng, nổi bật ưu điểm cơ thể",
+            "Thiết kế: Tỉ mỉ trên từng chi tiết, màu sắc của khuy áo và đường chỉ cần phải phù hợp với màu của vải 100%",
+            "Ưu điểm: Số lượng kim trên áo somi của Bi là 8 mũi/ 1 cm. Gấp 2 lần so với sơ mi ngoài thị trường"
+        ]
+    },
+    "trademark": "5SMDT002TRK",
+    "productType": "CLOTHES",
+    "originalPrice": 450000,
+    "price": 550000,
+    "discount": 0,
+    "sizes": [
+        {
+            "size": "41",
+            "status": 50
+        },
+        {
+            "size": "42",
+            "status": 30
+        },
+        {
+            "size": "43",
+            "status": -1
+        },
+        {
+            "size": "44",
+            "status": 2
+        }
+    ],
+    "nameImgs": [
+        "sominam1.jpg",
+        "sominam2.jpg",
+        "sominam3.jpg",
+        "sominam4.jpg"
+    ]
+}
+
+- note: đồng hồ:
+{
+    "name": "Đồng hồ Jacques Lemans JL-11-1654.2ZD",
+    "description": {
+        "description": "Đồng hồ Jacques Lemans JL-11-1654.2ZD phiên bản giới hạn. Với thiết kế đồng hồ thể thao điển hình dành cho phái mạnh luôn thuộc top những mẫu đồng hồ bán chạy nhất tại NQT Shop. Với phiên bản giới hạn của mình JL-11-1654.2ZD đã tăng thêm nhiều sự đột phá mới về thiết kế cũng như chất liệu sản phẩm khiến cho mẫu sản phẩm này càng trở nên đắt giá hơn.",
+        "parameter": [
+            "Chất liệu vỏ thép không gỉ 316L cao cấp.",
+            "Dây da chính hãng.",
+            "Bảo hành 2 năm quốc tế.",
+            "JL-11-1654.2ZD chắc chắn sẽ là một sự lựa chọn không thể bỏ qua cho phái mạnh trong năm nay."
+        ]
+    },
+    "trademark": "JL-11-1654.2ZD",
+    "productType": "OTHER",
+    "originalPrice": 4500000,
+    "price": 5500000,
+    "discount": 5,
+    "sizes": [
+        {
+            "size": "Not-Found",
+            "status": 20
+        }
+    ],
+    "nameImgs": [
+        "dongho1.jpg",
+        "sominam2.jpg",
+        "sominam3.jpg",
+        "sominam4.jpg"
+    ],
+    "featured": "POPULAR",
+    "imgFeatured": "dongho1.jpg"
+}
+
+-noet áo vest: 
+{
+    "name": "ÁO VEST NAZAFU MÀU DA BÒ AV1139",
+    "description": {
+        "parameter": [
+            "Áo vest nazafu màu da bò AV1139 bản giới hạn"
+        ]
+    },
+    "trademark": "nazafu",
+    "productType": "CLOTHES",
+    "originalPrice": 1100000,
+    "price": 1300000,
+    "discount": 0,
+    "sizes": [
+        {
+            "size": "s",
+            "status": 5
+        },
+        {
+            "size": "m",
+            "status": 5
+        },
+        {
+            "size": "l",
+            "status": 20
+        },
+        {
+            "size": "xl",
+            "status": 5
+        }
+    ],
+    "nameImgs": [
+        "vestp1.jpg",
+        "vestp2.jpg",
+        "vestp3.jpg",
+        "vestp4.jpg"
+    ],
+    "featured": "POPULAR",
+    "imgFeatured": "vestp1.jpg"
+}
+
+- Sản phẩm hot (tự thay đổi lượt mua)\
++ 1: Adidas Stan Smith Fairway
+{
+    "name": "Adidas Stan Smith Fairway",
+    "description": {
+        "description": "Fullbox Stan Smith. 2 ver Trắng Gót Xanh/ Full White. Thiết kế basic trend dài dài. Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Chất liệu: Da. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động."
+    },
+    "trademark": "Adidas ",
+    "productType": "FOOTWEAR",
+    "originalPrice": 800000,
+    "price": 955000,
+    "sizes": [
+        {
+            "size": "38",
+            "status": 20
+        },
+        {
+            "size": "39",
+            "status": 50
+        },
+        {
+            "size": "40",
+            "status": 10
+        },
+        {
+            "size": "41",
+            "status": 2
+        }
+    ],
+    "nameImgs": [
+        "Adidas1.jpg",
+        "Adidas2.jpg",
+        "Adidas3.jpg"
+    ]
+}
+
+- Áo
+{
+    "name": "ÁO HOODIE GRAPHIC ADIDAS X THE SIMPSONS FAMILY",
+    "description": {
+        "description": "CHIẾC ÁO HOODIE ẤM ÁP NẰM TRONG BỘ SƯU TẬP ADIDAS X THE SIMPSONS™. Cùng nhau trượt tuyết, cùng vui cả nhà. Chiếc áo hoodie adidas này có kiểu dáng classic và họa tiết graphic in dẻo mềm mại hình gia đình Simpson đang cùng nhau vui đùa trên tuyết. Đây là item thiết yếu khi trời lạnh, với chất vải thun da cá dễ chịu giúp bạn luôn ấm áp và thoải mái. Khi mua các sản phẩm cotton từ chúng tôi là bạn đang ủng hộ ngành trồng bông bền vững hơn. Sản phẩm này có sử dụng chất liệu tái chế, là một phần quyết tâm của chúng tôi hướng tới chấm dứt rác thải nhựa.",
+        "parameter": [
+            "Dáng regular fit",
+            "Vải thun da cá làm từ 53% cotton, 36% polyester tái chế, 11% viscose",
+            "Túi kangaroo",
+            "Gấu áo và cổ tay có gân bo",
+            "Họa tiết in dẻo ở mặt trước",
+            "Logo adidas x The Simpsons™ phía trên gấu áo",
+            "The Simpsons™ & © 20th Television",
+            "Better Cotton Initiative",
+            "Màu sản phẩm: White / Black",
+            "Mã sản phẩm: GS6305"
+        ]
+    },
+    "trademark": "không",
+    "productType": "CLOTHES",
+    "originalPrice": 1300000,
+    "price": 1600000,
+    "sizes": [
+        {
+            "size": "xs",
+            "status": 3
+        },
+        {
+            "size": "s",
+            "status": 10
+        },
+        {
+            "size": "m",
+            "status": 10
+        },
+        {
+            "size": "l",
+            "status": 15
+        }
+    ],
+    "nameImgs": [
+        "Ao_Hoodie_1.jpg",
+        "Ao_Hoodie_2.jpg",
+        "Ao_Hoodie_3.jpg",
+        "Ao_Hoodie_4.jpg"
+    ],
+    "hotProducts": true
+}
+
+-túi deo chéo
+{
+    "name": "Túi Đeo Chéo Nam Chống Nước Mark Ryden (BN792_DEN)",
+    "description": {
+        "description": "Túi Đeo Chéo Nam Chống Nước Mark Ryden sản phẩm đang hot hiện nay."
+    },
+    "trademark": "không",
+    "productType": "ACCESSORY",
+    "originalPrice": 500000,
+    "price": 720000,
+    "sizes": [
+        {
+            "size": "Not-Found",
+            "status": 50
+        }
+    ],
+    "nameImgs": [
+        "tuideocheo1.jpg"
+    ],
+    "hotProducts": true
+}
+
+- balo
+{
+    "name": "Balo Reeyee RY1007 15.6 M Black",
+    "description": {
+        "description": "Reeyee RY1007 15.6 M Black là sản phẩm balo laptop phong cách hiện đại, thanh lịch của Reeyee, một thương hiệu dẫn đầu về các dòng balo nam, khẳng định hình ảnh mạnh mẽ và khí chất đàn ông. Thiết kế theo phong cách Châu Âu và qua quy trình kiểm định chất lượng nghiêm ngặt, Reeyee RY1007 là balo cao cấp có tích hợp cổng sạc USB và kết nối Bluetooth chống trộm rất hiện đại, tiện lợi cho người sử dụng."
+    },
+    "trademark": "Reeyee",
+    "productType": "FOOTWEAR",
+    "originalPrice": 1000000,
+    "price": 1200000,
+    "sizes": [
+        {
+            "size": "Not-Found",
+            "status": 30
+        }
+    ],
+    "nameImgs": [
+        "balo1.jpg",
+        "balo2.jpg",
+        "balo3.jpg"
+    ],
+    "hotProducts": true
+}
+
+- quan giả váy
+{
+    "name": "QUẦN GIẢ VÁY CHỮ A 1 CÚC - QGVCA1C",
+    "description": {
+        "description": "QUẦN GIẢ VÁY CHỮ A 1 CÚC QUẦN GIẢ VÁY CHỮ A 1 CÚC Xưởng e cho ra thêm mã quần váy siêu hiện đại nữa nhé Quần quả váy hàng bao đẹp chất tuyết mưa Phom mẫu dáng chuẩn hàng quảng châu nhé các chế szie s m l xl (39-57kg).",
+        "parameter": [
+            "Xưởng e cho ra thêm mã quần váy siêu hiện đại nữa nhé",
+            "Quần quả váy hàng bao đẹp chất tuyết mưa",
+            "Phom mẫu dáng chuẩn hàng quảng châu nhé các chế ",
+            "szie s m l xl (39-57kg)"
+        ]
+    },
+    "trademark": "không",
+    "productType": "CLOTHES",
+    "originalPrice": 100000,
+    "price": 163000,
+    "sizes": [
+        {
+            "size": "s",
+            "status": 20
+        },
+        {
+            "size": "m",
+            "status": 30
+        },
+        {
+            "size": "l",
+            "status": 20
+        },
+        {
+            "size": "xl",
+            "status": 5
+        }
+    ],
+    "nameImgs": [
+        "quangiavay1.png",
+        "quangiavay2.png"
+    ],
+    "hotProducts": true
+}
+
+{
+    "name": "Áo thun Cotton Compact in Care&Share phiên bản mới Typo Colorful",
+    "description": {
+        "description": "Bạn đang tìm kiếm cho mình một chiếc áo với thiết kế ấn tượng và nói lên cá tính của mình thì đừng bỏ lỡ thiết kế này từ Care & Share Collection. Coolmate gởi đến bạn mẫu thiết kế mới " Care & Share" cùng thiết kế chữ mới mẻ dạng Typography Màu sắc trẻ trung, giới hạn số lượng sản phẩm. Bạn hoàn thoàn có thể lựa chọn mẫu thiết kế độc đáo theo tính cách và sở thích của mình.",
+        "parameter": [
+            "Sản phẩm sẽ bắt đầu được giao sau 2 ngày đặt",
+            "Đây là sản phẩm thuộc Care & Share Collection",
+            "Chất liệu: 95% Cotton Compact - 5% Spandex",
+            "Công nghệ in cao cấp không lo phai chữ ngay cả khi giặt với máy",
+            "Tự hào sản xuất tại Việt Nam",
+            "Người mẫu: 1m8 - 71kg, mặc XL"
+        ]
+    },
+    "trademark": "Care & Share Collection",
+    "productType": "CLOTHES",
+    "originalPrice": 150000,
+    "price": 259000,
+    "sizes": [
+        {
+            "size": "s",
+            "status": 1
+        },
+        {
+            "size": "m",
+            "status": 2
+        },
+        {
+            "size": "l",
+            "status": 3
+        }
+    ],
+    "nameImgs": [
+        "care_share_trang.jpg",
+        "care_share_trang1.jpg"
+    ]
+}
+
+
+chính sách bảo hành:
+
+{
+    "key": "WarrantyPolicy",
+    "values": [
+        {
+            "key": "Not-Found",
+            "value": "Với tiêu chí đặt quyền lợi của khách hàng lên hàng đầu, Shop NQT cam kết tất cả các sản phẩm được cung cấp tại Shop NQT là sản phẩm chính hãng, có nguồn gốc, xuất xứ rõ ràng và đảm bảo chất lượng. Các sản phẩm cung cấp tại Shop NQT được bảo hành theo chế độ bảo hành của nhà sản xuất. Thời gian sản phẩm bảo hành được tính từ ngày nhân viên Shop NQT tiếp nhận sản phẩm sẽ phụ thuộc vào tình trạng của từng sản phẩm và chính sách bảo hành của mỗi nhà cung cấp."
+        },
+        {
+            "key": "Quy định và trách nhiệm bảo hành sản phẩm",
+            "value": "Đối với sản phẩm được phân phối tại Shop NQT được Shop NQT ghi rõ thông tin, thời gian bảo hành, khách hàng có thể mang sản phẩm gửi lại cho Shop NQT. Shop NQT sẽ hỗ trợ khách hàng tiếp nhận và vận chuyển sản phẩm đến Trung Tâm Bảo Hành. Sản phẩm được bảo hành miễn phí trong thời hạn và phạm vi bảo hành; hoặc có tính phí dựa trên tình trạng của sản phẩm và quy định của nhà bảo hành. Các chi phí phát sinh (nếu có) nằm ngoài phạm vi bảo hành sẽ do khách hàng chịu trách nhiệm chi trả."
+        },
+        {
+            "key": "Các trường hợp không được bảo hành tại Shop NQT",
+            "value": "Các sản phẩm không có thông tin bảo hành từ nhà sản xuất."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sản phẩm đã hết thời hạn bảo hành."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sản phẩm bị mất phiếu bảo hành của nhà sản xuất."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Tem bảo hành bị rách, không còn tem bảo hành."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sản phẩm bị can thiệp như tháo linh kiện, sửa chữa bởi cá nhân hoặc kỹ thuật viên mà không phải là nhân viên của Shop NQT."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sản phẩm bị hỏng hóc do tác động cơ học, biến dạng, rơi, vỡ, va đập, bị xước, bị hỏng do ẩm ướt, hoen rỉ, chảy nước, động vật xâm nhập vào hoặc con nguời làm hỏng."
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sản phẩm được sử dụng không tuân theo hướng dẫn của nhà cung cấp."
+        }
+    ],
+    "suportKey": "Chính sách bảo hành"
+}
+
+chín sách bảo mật
+{
+    "key": "PrivacyPolicy",
+    "values": [
+        {
+            "key": "Not-Found",
+            "value": "Shop NQT không bán, chia sẻ hay trao đổi thông tin cá nhân của khách hàng thu thập trên trang web cho một bên thứ ba nào khác. Thông tin cá nhân thu thập được sẽ chỉ được sử dụng nội bộ."
+        },
+        {
+            "key": "Thu thập thông tin cá nhân",
+            "value": "Khi quý khách đăng ký tài khoản Shop NQT, thông tin cá nhân mà chúng tôi thu thập bao gồm: Họ và tên, Số điện thoại, Địa chỉ, Email."
+        },
+        {
+            "key": "Mục đính sử dụng thông tin cá nhân",
+            "value": "Giao hàng quý khách đã mua tại Shop NQT"
+        },
+        {
+            "key": "Not-Found",
+            "value": "Thông báo về việc giao hàng và hỗ trợ khách hàng"
+        },
+        {
+            "key": "Not-Found",
+            "value": "Cung cấp thông tin liên quan đến sản phẩm"
+        },
+        {
+            "key": "Phạm vi sử dụng thông tin cá nhân",
+            "value": "Ngoài ra, chúng tôi sẽ sử dụng thông tin quý khách cung cấp để hỗ trợ quản lý tài khoản khách hàng; xác nhận và thực hiện các giao dịch tài chính liên quan đến các khoản thanh toán trực tuyến của quý khách; kiểm tra dữ liệu tải từ trang web của chúng tôi; cải thiện giao diện và/hoặc nội dung của các trang mục trên trang web và tùy chỉnh để dễ dàng hơn khi sử dụng; nhận diện khách đến thăm trang web; nghiên cứu về nhân khẩu học của người sử dụng; gửi đến quý khách thông tin mà chúng tôi nghĩ sẽ có ích hoặc do quý khách yêu cầu, bao gồm thông tin về sản phẩm và dịch vụ, với điều kiện quý khách đồng ý không phản đối việc được liên lạc cho các mục đích trên."
+        },
+        {
+            "key": "Thời gian lưu trữ",
+            "value": "Thông tin đơn hàng và thông tin cá nhân sẽ được lưu trữ vĩnh viễn hoặc cho tới khi Shop NQT không còn hoạt động."
+        },
+        {
+            "key": "Tiếp cận và cập nhập thông tin cá nhân",
+            "value": "Chi tiết đơn hàng của quý khách sẽ được chúng tôi lưu trữ nhưng vì lý do bảo mật, quý khách không thể yêu cầu thông tin đó từ chúng tôi. Tuy nhiên, quý khách có thể kiểm tra và cập nhập thông tin cá nhân thông tin đó bằng cách đăng nhập vào tài khoản riêng của mình trên trang web. Tại đó, quý khách có thể theo dõi đầy đủ chi tiết của các đơn hàng đã hoàn tất, những đơn hàng mở và những đơn hàng sắp được giao cũng như quản lý thông tin về địa chỉ, thông tin về ngân hàng và những bản tin mà quý khách đã đăng ký nhận. Quý khách cần bảo đảm là thông tin được truy cập một cách bí mật và không làm lộ cho một bên thứ ba không có quyền. Chúng tôi sẽ không chịu trách nhiệm đối với việc sử dụng sai mật khẩu trừ khi đó là lỗi của chúng tôi."
+        },
+        {
+            "key": "Bảo mật thông tin cá nhân",
+            "value": "Shop NQT đảm bảo rằng mọi thông tin thu thập được sẽ được lưu giữ an toàn. Chúng tôi bảo vệ thông tin cá nhân của quý khách bằng cách:"
+        },
+        {
+            "key": "Not-Found",
+            "value": "Giới hạn truy cập thông tin cá nhân"
+        },
+        {
+            "key": "Not-Found",
+            "value": "Sử dụng sản phẩm công nghệ để ngăn chặn truy cập máy tính trái phép"
+        },
+        {
+            "key": "Not-Found",
+            "value": "Xóa thông tin cá nhân của quý khách khi nó không còn cần thiết cho mục đích lưu trữ hồ sơ của chúng tôi"
+        },
+        {
+            "key": "Tiết lộ thông tin cá nhân",
+            "value": "Chúng tôi sẽ không chia sẻ thông tin của quý khách cho bất kỳ một công ty nào khác ngoại trừ những công ty và các bên thứ ba có liên quan trực tiếp đến việc giao hàng mà quý khách đã mua tại Shop NQT. Trong một vài trường hợp đặc biệt, Shop NQT có thể bị yêu cầu phải tiết lộ thông tin cá nhân, ví dụ như khi có căn cứ cho việc tiết lộ thông tin là cần thiết để ngăn chặn các mối đe dọa về tính mạng và sức khỏe, hay cho mục đích thực thi pháp luật. Shop NQT cam kết tuân thủ Đạo luật Bảo Mật và các Nguyên tắc Bảo mật Quốc gia."
+        },
+        {
+            "key": "Thay đổi của Chính sách Bảo mật",
+            "value": "Shop NQT có quyền thay đổi và chỉnh sửa Quy định Bảo mật vào bất kỳ lúc nào. Bất cứ thay đổi nào về chính sách này đều được đăng trên trang web của chúng tôi."
+        }
+    ],
+    "suportKey": "Chính sách bảo mật"
+}

@@ -1,0 +1,12 @@
+.wrapperChildren {
+  padding: 36px 76px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 46.1875em) {
+  .wrapperChildren {
+    padding: 8px;
+  }
+}

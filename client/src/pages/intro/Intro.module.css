@@ -1,0 +1,25 @@
+.wrapperList {
+  /* padding: 40px; */
+  list-style: none;
+}
+
+.title {
+  font-size: 22px;
+  margin: 0;
+}
+
+.item {
+  padding-left: 12px;
+  margin-top: 12px;
+}
+
+.itemTitle {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.itemDescription {
+  font-size: 14px;
+  margin: 0;
+  max-width: 1100px;
+}

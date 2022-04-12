@@ -1,0 +1,135 @@
+.wrapperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperProduct {
+  display: flex;
+  margin: 8px 0;
+}
+.wrapperImgs,
+.wrapperConten {
+  flex: 1;
+}
+
+.wrapperImgs {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px 0;
+}
+.wrapperImg {
+  display: flex;
+  flex-direction: column;
+}
+.img {
+  width: 100px;
+  height: 100px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+.wrapperImgMain {
+  width: 370px;
+  margin: 8px 32px;
+  position: relative;
+  margin-top: 26px;
+}
+.imgMain {
+  width: 100%;
+  border-radius: 4px;
+}
+.discount {
+  position: absolute;
+  top: 22px;
+}
+
+.price {
+  color: #d9121f;
+}
+.originalPrice {
+  color: rgb(153, 153, 153);
+}
+
+.wrapperConten {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.name {
+  font-size: 20px;
+  margin: 24px 0 0 0;
+  line-height: 35px;
+}
+
+.description {
+  margin: 0 32px;
+  font-size: 28px;
+}
+
+.titleDescription {
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.contenDescription {
+  max-width: 80%;
+}
+
+.technicalData {
+  max-width: 80%;
+  margin: 8px 0;
+}
+
+.titleNews {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+.btnNews {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.btnNews:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+  .wrapperImgMain {
+    margin: 12px 44px;
+  }
+  .wrapperConten {
+    margin: 0 16px;
+  }
+}
+
+/* mobile & tablet */
+@media only screen and (max-width: 63.9375em) {
+  .wrapperImgs {
+    display: flex;
+    margin: 0;
+    flex-direction: column-reverse;
+  }
+  .wrapperImg {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 22px;
+    justify-content: space-between;
+  }
+  .img {
+    width: 70px;
+    height: 70px;
+  }
+  .wrapperImgMain {
+    display: flex;
+    width: 80%;
+    position: relative;
+  }
+}

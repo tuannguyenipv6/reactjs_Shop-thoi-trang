@@ -1,0 +1,57 @@
+.titleInfo,
+.wrapperInfo h2 {
+  margin: 0 0 8px 0;
+  color: #36424b;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.wrapperInfo p {
+  margin: 0;
+  max-width: 688px;
+  font-size: 14px;
+}
+
+.font {
+  font-size: 14px;
+}
+
+.desInfo {
+  font-style: italic;
+  color: #36424b;
+  font-size: 12px;
+}
+
+.wrapperForm {
+  margin-top: 30px;
+}
+
+.form {
+  max-width: 730px;
+}
+
+.btn {
+  margin-bottom: 24px;
+}
+
+.inputArea {
+  height: 131px;
+  width: 500px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.inputSelectField {
+  margin-top: 8px;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 63.9375em) {
+  .wrapperForm {
+    margin: 30px 36px;
+  }
+  .inputArea {
+    height: 150px;
+    width: 280px;
+  }
+}

@@ -1,0 +1,54 @@
+.wrapper {
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 0 8px;
+  transition: transform 0.1s linear 0s;
+}
+.wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.item {
+  width: 100%;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding-bottom: 12px;
+}
+
+.itemImg {
+  width: 100%;
+  padding-top: 100%;
+  /*100% tính chiều ngang của thẻ chứa nó
+        Và căn đúng hình vuông theo chiều ngang đó */
+  background-repeat: no-repeat; /*bỏ đi background ảnh thêm vào thừa*/
+  background-size: cover; /*đầy ảnh ra */
+  background-position: center; /*căn giữa và đưa lên top*/
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.itemConten {
+  margin: 16px;
+}
+
+.itemTitle {
+  margin: 0;
+  line-height: 23px;
+  /* chỉ lấy 2 dòng và để 3 chấm sau chử */
+  height: 46px; /*gấp đôi của line-height tức chỉ còn 2 dòng*/
+  overflow: hidden;
+  /* Khi con chòi ra quá tk cha thì ta sẽ làm gì: hidden (ẩn nó đi)*/
+  display: -webkit-box; /*để sd được 2 thuộc tính ở dưới*/
+  -webkit-box-orient: vertical; /*theo chiều dọc*/
+  -webkit-line-clamp: 2; /*ở hàng thứ 2*/
+}
+
+.itemDescription {
+  margin: 12px 0;
+  line-height: 16px;
+  height: 32px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

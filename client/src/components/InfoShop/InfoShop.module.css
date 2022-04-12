@@ -1,0 +1,27 @@
+.contactList {
+  list-style: none;
+}
+
+.contactList ul {
+  padding: 0;
+}
+
+.contactList ul p {
+  display: flex;
+  align-items: center;
+}
+
+.contactList ul p svg {
+  color: #737373;
+  margin-right: 8px;
+}
+
+.contactList ul p a {
+  margin-left: 4px;
+  color: #ce3f3f;
+}
+
+.contactList ul p a:hover {
+  text-decoration: underline;
+  color: #0068d8;
+}

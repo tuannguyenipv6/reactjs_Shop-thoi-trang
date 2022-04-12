@@ -1,0 +1,46 @@
+/* [id] */
+.title {
+  margin: 0;
+}
+.date {
+  display: flex;
+  align-items: center;
+  color: #999999;
+  font-size: 18px;
+  margin: 8px 0 0 12px;
+}
+.date svg {
+  margin-right: 8px;
+}
+.list {
+  padding: 12px 8px;
+  list-style: none;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8px;
+  margin: 0;
+}
+.description {
+  margin: 8px 4px;
+}
+.img {
+  max-height: 556px;
+  object-fit: contain;
+  margin: 4px 0;
+}
+
+@media only screen and (max-width: 63.9375em) {
+  .wrapper {
+    margin: 8px 12px;
+  }
+}
+
+/* Mobile lớn: width 667px => 740px */
+@media only screen and (max-width: 46.1875em) {
+  .wrapperIndex {
+    padding: 18px 30px;
+  }
+}

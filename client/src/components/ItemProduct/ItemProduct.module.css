@@ -1,0 +1,111 @@
+.wrapper {
+  margin: 4px 8px;
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  transform: translateY(-6px);
+  transition: all 0.3s ease;
+}
+
+.saleOff {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 216, 63, 0.94);
+  padding: 4px 6px;
+  border-top-right-radius: 2px;
+  font-weight: bold;
+}
+
+.saleOff::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  border-width: 0 20px 4px;
+  border-style: solid;
+  border-color: transparent rgba(255, 216, 63, 0.94) transparent
+    rgba(255, 216, 63, 0.94);
+}
+.saleOffPercent {
+  color: red;
+  font-size: 14px;
+}
+.saleOffLabel {
+  color: #fff;
+  font-size: 14px;
+}
+
+.title {
+  margin: 12px 12px 0 12px;
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 18px;
+}
+
+.wrapperPrice {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 12px;
+}
+.originalPrice {
+  text-decoration: line-through;
+}
+.promotionalPrice {
+  color: #d80202;
+}
+
+.sold {
+  font-size: 12px;
+  color: black;
+}
+
+.wrapperIcon {
+  position: absolute;
+  opacity: 0;
+  right: -40px;
+  bottom: 45%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 4px 6px;
+  border-radius: 25px;
+  cursor: default;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  margin: 4px 0;
+}
+
+.icon:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+.wrapper:hover > .wrapperIcon {
+  opacity: 1;
+  right: 4px;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapperIcon {
+    display: none;
+  }
+}

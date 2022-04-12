@@ -1,0 +1,116 @@
+.form {
+  margin-right: 76px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.wrapperBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  padding: 18px 42px;
+  font-weight: 500;
+  font-size: 18px;
+  z-index: 1;
+  position: relative;
+}
+
+.button svg {
+  margin-left: 8px;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: black;
+}
+
+.button:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+.alreadyAccount {
+  align-self: center;
+}
+
+.alreadyAccount a {
+  font-weight: bold;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+/* SupportAuth */
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.descriptionList li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.descriptionList li p {
+  margin-left: 4px;
+}
+
+@media only screen and (max-width: 63.9375em) {
+  .wrapper {
+    padding: 12px;
+  }
+
+  .button {
+    padding: 8px 12px;
+  }
+  .form {
+    margin: 8px;
+  }
+  .title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* SupportAuth */
+  .descriptionList {
+    padding: 0;
+  }
+  .descriptionList li {
+    margin: 4px;
+  }
+  .descriptionList li svg {
+    display: none;
+  }
+  .descriptionList li p {
+    margin: 0;
+  }
+}
